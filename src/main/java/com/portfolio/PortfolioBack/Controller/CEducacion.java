@@ -57,7 +57,7 @@ public class CEducacion {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable ("id") int id, @RequestBody dtoEducacion dtoEdu){
         if(!Seducacion.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
@@ -78,7 +78,7 @@ public class CEducacion {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable ("id") int id){
         
         if(!Seducacion.existsById(id))

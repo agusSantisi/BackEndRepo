@@ -58,7 +58,7 @@ public class CExperiencia {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable ("id") int id, @RequestBody dtoExperiencia dtoExp){
         if(!Sexperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
