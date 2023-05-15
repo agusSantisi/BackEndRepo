@@ -1,10 +1,11 @@
 
 package com.portfolio.PortfolioBack.Controller;
 
-import com.portfolio.PortfolioBack.Dto.dtoEducacion;
+import com.portfolio.PortfolioBack.Dto.dtoExperiencia;
 import com.portfolio.PortfolioBack.Entity.Educacion;
+import com.portfolio.PortfolioBack.Entity.Experiencia;
 import com.portfolio.PortfolioBack.Security.Controller.Mensaje;
-import com.portfolio.PortfolioBack.Service.SEducacion;
+import com.portfolio.PortfolioBack.Service.SExperiencia;
 
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -23,68 +24,68 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("educacion")
+@RequestMapping("experiencia")
 @CrossOrigin(origins = "https://localhost:4200")
-public class CEducacion {
+public class CExperiencia {
     @Autowired 
-    SEducacion Seducacion;
+    SExperiencia Sexperiencia;
     
-    @GetMapping("/lista")
-    public ResponseEntity<List<Educacion>> list(){
-        List<Educacion> list = Seducacion.list();
+    @GetMapping("/list")
+    public ResponseEntity<List<Experiencia>> list(){
+        List<Experiencia> list = Sexperiencia.list();
         return new ResponseEntity (list, HttpStatus.OK);
     }
     
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Educacion> getById(@PathVariable("id") int id){
-        if(!Seducacion.existsById(id))
+    public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
+        if(!Sexperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        Educacion educacion = Seducacion.getOne(id).get();
-        return new ResponseEntity(educacion, HttpStatus.OK);
+        Experiencia experiencia = Sexperiencia.getOne(id).get();
+        return new ResponseEntity(experiencia, HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoEdu){
-        if(StringUtils.isBlank(dtoEdu.getNombreE()))
+    public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoExp){
+        if(StringUtils.isBlank(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        if(Seducacion.existsByNombreE(dtoEdu.getNombreE()))
+        if(Sexperiencia.existsByNombreE(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
         
-        Educacion educacion = new Educacion(dtoEdu.getNombreE(), dtoEdu.getDescripcionE());
-        Seducacion.save(educacion);
-        return new ResponseEntity(new Mensaje ("Educacion agregada"), HttpStatus.OK);
+        Experiencia experiencia = new Experiencia(dtoExp.getNombreE(), dtoExp.getDescripcionE());
+        Sexperiencia.save(experiencia);
+        return new ResponseEntity(new Mensaje ("Experiencia agregada"), HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("update/{id}")
-    public ResponseEntity<?> update(@PathVariable ("id") int id, @RequestBody dtoEducacion dtoEdu){
-        if(!Seducacion.existsById(id))
+    public ResponseEntity<?> update(@PathVariable ("id") int id, @RequestBody dtoExperiencia dtoExp){
+        if(!Sexperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         
-        if(Seducacion.existsByNombreE(dtoEdu.getNombreE()) && Seducacion.getByNombreE(dtoEdu.getNombreE()).get().getId() != id)
-            return new ResponseEntity(new Mensaje("Ese item de educación ya existe"), HttpStatus.BAD_REQUEST);
+        if(Sexperiencia.existsByNombreE(dtoExp.getNombreE()) && Sexperiencia.getByNombreE(dtoExp.getNombreE()).get().getId() != id)
+            return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         
-        if(StringUtils.isBlank(dtoEdu.getNombreE()))
+        if(StringUtils.isBlank(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio!!"), HttpStatus.BAD_REQUEST);
         
-        Educacion educacion = Seducacion.getOne(id).get();
-        educacion.setNombreE(dtoEdu.getNombreE());
-        educacion.setDescripcionE(dtoEdu.getDescripcionE());
-        Seducacion.save(educacion);
+        Experiencia experiencia = Sexperiencia.getOne(id).get();
+        experiencia.setNombreE(dtoExp.getNombreE());
+        experiencia.setDescripcionE(dtoExp.getDescripcionE());
+        Sexperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("El item fue modificado correctamente"), HttpStatus.OK);
         
         
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable ("id") int id){
         
-        if(!Seducacion.existsById(id))
+        if(!Sexperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         
-        Seducacion.delete(id);
+        Sexperiencia.delete(id);
         return new ResponseEntity(new Mensaje("El item fue borrado correctamente"), HttpStatus.OK);
     }
     
