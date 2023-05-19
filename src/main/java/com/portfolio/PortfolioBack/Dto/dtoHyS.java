@@ -6,24 +6,24 @@ import jakarta.validation.constraints.NotBlank;
 
 public class dtoHyS {
     @NotBlank
-    private String tecnologia;
+    private String nombre;
     @NotBlank
     private int porcentaje;
 
     public dtoHyS() {
     }
 
-    public dtoHyS(String tecnologia, int porcentaje) {
-        this.tecnologia = tecnologia;
+    public dtoHyS(String nombre, int porcentaje) {
+        this.nombre = nombre;
         this.porcentaje = porcentaje;
     }
 
-    public String getTecnologia() {
-        return tecnologia;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTecnologia(String tecnologia) {
-        this.tecnologia = tecnologia;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getPorcentaje() {

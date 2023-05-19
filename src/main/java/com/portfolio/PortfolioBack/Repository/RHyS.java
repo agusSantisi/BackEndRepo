@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface RHyS extends JpaRepository<HyS,Integer>{
-    Optional<HyS> findByTecnologia(String tecnologia);
-    public boolean existsByTecnologia(String tecnologia);
+    Optional<HyS> findByNombre(String nombre);
+    public boolean existsByNombre(String nombre);
 }

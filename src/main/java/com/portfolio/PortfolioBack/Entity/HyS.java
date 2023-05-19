@@ -12,12 +12,12 @@ public class HyS {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private String tecnologia;
+    private String nombre;
     private int porcentaje;
 
 
-    public HyS(String tecnologia, int porcentaje) {
-        this.tecnologia = tecnologia;
+    public HyS(String nombre, int porcentaje) {
+        this.nombre = nombre;
         this.porcentaje = porcentaje;
     }
     
@@ -32,12 +32,12 @@ public class HyS {
         this.id = id;
     }
 
-    public String getTecnologia() {
-        return tecnologia;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTecnologia(String tecnologia) {
-        this.tecnologia = tecnologia;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getPorcentaje() {

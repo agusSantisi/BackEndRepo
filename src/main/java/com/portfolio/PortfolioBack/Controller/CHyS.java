@@ -30,7 +30,7 @@ public class CHyS {
     @Autowired
     SHyS shys;
     
-    @GetMapping("/lista")
+    @GetMapping("/list")
     public ResponseEntity<List<HyS>> list(){
         List<HyS> list = shys.list();
         return new ResponseEntity(list, HttpStatus.OK);
@@ -48,14 +48,14 @@ public class CHyS {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoHyS dtohys) {
-        if(StringUtils.isBlank(dtohys.getTecnologia())){
-            return new ResponseEntity(new Mensaje("El nombre de la tecnologia es obligatorio"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtohys.getNombre())){
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if(shys.existsByTecnologia(dtohys.getTecnologia())){
-            return new ResponseEntity(new Mensaje("Esa tecnologia ya existe"), HttpStatus.BAD_REQUEST);
+        if(shys.existsByNombre(dtohys.getNombre())){
+            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        HyS hys = new HyS (dtohys.getTecnologia(), dtohys.getPorcentaje());
+        HyS hys = new HyS (dtohys.getNombre(), dtohys.getPorcentaje());
         shys.save(hys);
         return new ResponseEntity(new Mensaje("El item fue agregado"), HttpStatus.BAD_REQUEST);
     }
@@ -66,15 +66,16 @@ public class CHyS {
         if (!shys.existsById(id)){
             return new ResponseEntity(new Mensaje("El item no existe"), HttpStatus.BAD_REQUEST);
         }
-        if(shys.existsByTecnologia(dtohys.getTecnologia()) && shys.getByTecnologia(dtohys.getTecnologia()).get().getId() != id){
+        if(shys.existsByNombre(dtohys.getNombre()) && shys.getByNombre(dtohys.getNombre()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Ese item ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if(StringUtils.isBlank(dtohys.getTecnologia())){
-            return new ResponseEntity(new Mensaje("El nombre de la recnologia es obligatorio"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtohys.getNombre())){
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         
+        
         HyS hys = shys.getOne(id).get();
-        hys.setTecnologia(dtohys.getTecnologia());
+        hys.setNombre(dtohys.getNombre());
         hys.setPorcentaje(dtohys.getPorcentaje());
         shys.save(hys);
         return new ResponseEntity(new Mensaje("El item fue actualizado correctamente"), HttpStatus.OK);

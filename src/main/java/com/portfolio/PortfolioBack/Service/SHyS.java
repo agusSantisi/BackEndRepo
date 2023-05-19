@@ -23,8 +23,8 @@ public class SHyS {
         return rhys.findById(id);
     }
     
-    public Optional<HyS> getByTecnologia(String tecnologia){
-        return rhys.findByTecnologia(tecnologia);
+    public Optional<HyS> getByNombre(String nombre){
+        return rhys.findByNombre(nombre);
     }
         
     public void save(HyS skill){
@@ -39,7 +39,7 @@ public class SHyS {
         return rhys.existsById(id);
     }
     
-    public boolean existsByTecnologia(String tecnologia){
-        return rhys.existsByTecnologia(tecnologia);
+    public boolean existsByNombre(String nombre){
+        return rhys.existsByNombre(nombre);
     }
 }
