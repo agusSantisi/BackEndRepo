@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/educacion")
-@CrossOrigin(origins = "https://frontendportfoliosantisi.web.app")
+@CrossOrigin(origins = {"https://frontendportfoliosantisi.web.app", "http://localhost:4200"})
 public class CEducacion {
     @Autowired 
     SEducacion Seducacion;
@@ -86,11 +86,5 @@ public class CEducacion {
         
         Seducacion.delete(id);
         return new ResponseEntity(new Mensaje("El item fue borrado correctamente"), HttpStatus.OK);
-    }
-    
-    
-    
-    
-    
-    
+    }    
 }

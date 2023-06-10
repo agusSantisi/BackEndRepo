@@ -2,7 +2,6 @@
 package com.portfolio.PortfolioBack.Controller;
 
 import com.portfolio.PortfolioBack.Dto.dtoExperiencia;
-import com.portfolio.PortfolioBack.Entity.Educacion;
 import com.portfolio.PortfolioBack.Entity.Experiencia;
 import com.portfolio.PortfolioBack.Security.Controller.Mensaje;
 import com.portfolio.PortfolioBack.Service.SExperiencia;
@@ -25,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/experiencia")
-@CrossOrigin(origins = "https://frontendportfoliosantisi.web.app")
+@CrossOrigin(origins = {"https://frontendportfoliosantisi.web.app", "http://localhost:4200"})
 public class CExperiencia {
     @Autowired 
     SExperiencia Sexperiencia;

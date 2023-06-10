@@ -8,6 +8,7 @@ com\portfolio\PortfolioBack\Security\Dto\LoginUsuario.class
 com\portfolio\PortfolioBack\Controller\PersonaController.class
 com\portfolio\PortfolioBack\Security\Service\UserDetailsServiceImpl.class
 com\portfolio\PortfolioBack\Security\Service\UsuarioService.class
+com\portfolio\PortfolioBack\Dto\dtoPersona.class
 com\portfolio\PortfolioBack\Repository\RExperiencia.class
 com\portfolio\PortfolioBack\Entity\HyS.class
 com\portfolio\PortfolioBack\Security\Controller\AuthController.class
@@ -33,7 +34,6 @@ com\portfolio\PortfolioBack\Security\Enums\RolNombre.class
 com\portfolio\PortfolioBack\Dto\dtoEducacion.class
 com\portfolio\PortfolioBack\Security\Entity\UsuarioPrincipal.class
 com\portfolio\PortfolioBack\Security\MainSecurity.class
-com\portfolio\PortfolioBack\Interface\IPersonaService.class
 com\portfolio\PortfolioBack\Repository\RHyS.class
 com\portfolio\PortfolioBack\Security\jwt\JwtEntryPoint.class
 com\portfolio\PortfolioBack\Service\SEducacion.class
