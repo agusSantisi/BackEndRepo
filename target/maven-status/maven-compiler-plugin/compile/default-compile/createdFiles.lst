@@ -8,11 +8,14 @@ com\portfolio\PortfolioBack\Security\Dto\LoginUsuario.class
 com\portfolio\PortfolioBack\Controller\PersonaController.class
 com\portfolio\PortfolioBack\Security\Service\UserDetailsServiceImpl.class
 com\portfolio\PortfolioBack\Security\Service\UsuarioService.class
+com\portfolio\PortfolioBack\Entity\Proyecto.class
 com\portfolio\PortfolioBack\Dto\dtoPersona.class
+com\portfolio\PortfolioBack\Service\SProyecto.class
 com\portfolio\PortfolioBack\Repository\RExperiencia.class
 com\portfolio\PortfolioBack\Entity\HyS.class
 com\portfolio\PortfolioBack\Security\Controller\AuthController.class
 com\portfolio\PortfolioBack\Security\Service\RolService.class
+com\portfolio\PortfolioBack\Controller\CProyecto.class
 com\portfolio\PortfolioBack\Controller\CHyS.class
 com\portfolio\PortfolioBack\Security\Controller\Mensaje.class
 com\portfolio\PortfolioBack\Security\Repository\iRolRepository.class
@@ -23,6 +26,8 @@ com\portfolio\PortfolioBack\Service\SHyS.class
 com\portfolio\PortfolioBack\Entity\Persona.class
 com\portfolio\PortfolioBack\Controller\CExperiencia.class
 com\portfolio\PortfolioBack\Dto\dtoHyS.class
+com\portfolio\PortfolioBack\Dto\dtoProyecto.class
+com\portfolio\PortfolioBack\Repository\RProyecto.class
 com\portfolio\PortfolioBack\PortfolioBackApplication.class
 com\portfolio\PortfolioBack\Security\Entity\Usuario.class
 com\portfolio\PortfolioBack\Repository\REducacion.class

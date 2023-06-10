@@ -1,7 +1,6 @@
 
 package com.portfolio.PortfolioBack.Service;
 
-import com.portfolio.PortfolioBack.Entity.Educacion;
 import com.portfolio.PortfolioBack.Entity.Proyecto;
 import com.portfolio.PortfolioBack.Repository.RProyecto;
 import jakarta.transaction.Transactional;
