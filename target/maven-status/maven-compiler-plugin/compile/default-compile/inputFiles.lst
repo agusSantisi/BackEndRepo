@@ -3,9 +3,8 @@ C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\por
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Dto\dtoProyecto.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Repository\RProyecto.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\Entity\UsuarioPrincipal.java
-C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Service\ImpPersonaService.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Entity\Experiencia.java
-C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Repository\IPersonaRepository.java
+C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Repository\RPersona.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Dto\dtoExperiencia.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Service\SHyS.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\Entity\Rol.java
@@ -15,7 +14,9 @@ C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\por
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Repository\RHyS.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Controller\CEducacion.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\MainSecurity.java
+C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Service\SPersona.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Controller\CProyecto.java
+C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Controller\CPersona.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Entity\Proyecto.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\Dto\LoginUsuario.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\Dto\NuevoUsuario.java
@@ -23,7 +24,6 @@ C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\por
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Repository\REducacion.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\Enums\RolNombre.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\PortfolioBackApplication.java
-C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Controller\PersonaController.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Dto\dtoPersona.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Service\SEducacion.java
 C:\Users\User\Desktop\Curso Argentina Programa\BackEndRepo\src\main\java\com\portfolio\PortfolioBack\Security\Controller\Mensaje.java

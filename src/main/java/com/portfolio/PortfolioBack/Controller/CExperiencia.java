@@ -48,6 +48,8 @@ public class CExperiencia {
     public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoExp){
         if(StringUtils.isBlank(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtoExp.getDescripcionE()))
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         if(Sexperiencia.existsByNombreE(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
         
@@ -67,10 +69,13 @@ public class CExperiencia {
         
         if(StringUtils.isBlank(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio!!"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtoExp.getDescripcionE()))
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         
         Experiencia experiencia = Sexperiencia.getOne(id).get();
         experiencia.setNombreE(dtoExp.getNombreE());
         experiencia.setDescripcionE(dtoExp.getDescripcionE());
+        
         Sexperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("El item fue modificado correctamente"), HttpStatus.OK);
         

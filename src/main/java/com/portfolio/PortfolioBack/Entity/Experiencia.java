@@ -17,11 +17,12 @@ public class Experiencia {
     
     public Experiencia() {
     }
-    
+
     public Experiencia(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
+    
 
     public int getId() {
         return id;
@@ -46,12 +47,4 @@ public class Experiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
-    
-    
-
-    
-    
-    
-    
-    
 }

@@ -13,15 +13,17 @@ public class Proyecto {
     private int id;
     private String nombreP;
     private String descripcionP;
-
+    private String link;
     public Proyecto() {
     }
 
-    public Proyecto(String nombreP, String descripcionP) {
+    public Proyecto(String nombreP, String descripcionP, String link) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
+        this.link = link;
     }
 
+    
     public int getId() {
         return id;
     }
@@ -45,6 +47,12 @@ public class Proyecto {
     public void setDescripcionP(String descripcionP) {
         this.descripcionP = descripcionP;
     }
-    
-    
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 }

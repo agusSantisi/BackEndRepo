@@ -17,7 +17,7 @@ public class Educacion {
     
     public Educacion() {
     }
-    
+
     public Educacion(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
@@ -46,12 +46,4 @@ public class Educacion {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
-    
-    
-
-    
-    
-    
-    
-    
 }

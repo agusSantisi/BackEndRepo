@@ -47,10 +47,12 @@ public class CProyecto {
     public ResponseEntity<?> create(@RequestBody dtoProyecto dtoPro){
         if(StringUtils.isBlank(dtoPro.getNombreP()))
             return new ResponseEntity(new Mensaje("¡El nombre es obligatorio!"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtoPro.getDescripcionP()))
+            return new ResponseEntity(new Mensaje("¡La descripción es obligatoria!"), HttpStatus.BAD_REQUEST);       
         if(Sproyecto.existsByNombreP(dtoPro.getNombreP()))
             return new ResponseEntity(new Mensaje("Ese proyecto ya existe..."), HttpStatus.BAD_REQUEST);
         
-        Proyecto proyecto = new Proyecto(dtoPro.getNombreP(), dtoPro.getDescripcionP());
+        Proyecto proyecto = new Proyecto(dtoPro.getNombreP(), dtoPro.getDescripcionP(), dtoPro.getLink());
         Sproyecto.save(proyecto);
         return new ResponseEntity(new Mensaje ("Proyecto agregado"), HttpStatus.OK);
     }
@@ -65,11 +67,15 @@ public class CProyecto {
             return new ResponseEntity(new Mensaje("Ese item ya existe"), HttpStatus.BAD_REQUEST);
         
         if(StringUtils.isBlank(dtoPro.getNombreP()))
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio!!"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("¡El nombre es obligatorio!"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtoPro.getDescripcionP()))
+            return new ResponseEntity(new Mensaje("¡La descripción es obligatoria!"), HttpStatus.BAD_REQUEST);
         
         Proyecto proyecto = Sproyecto.getOne(id).get();
         proyecto.setNombreP(dtoPro.getNombreP());
         proyecto.setDescripcionP(dtoPro.getDescripcionP());
+        proyecto.setLink(dtoPro.getLink());
+        
         Sproyecto.save(proyecto);
         return new ResponseEntity(new Mensaje("El item fue modificado correctamente"), HttpStatus.OK);
         

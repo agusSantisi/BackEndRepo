@@ -48,8 +48,8 @@ public class CEducacion {
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoEdu){
         if(StringUtils.isBlank(dtoEdu.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        if(Seducacion.existsByNombreE(dtoEdu.getNombreE()))
-            return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtoEdu.getDescripcionE()))
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         
         Educacion educacion = new Educacion(dtoEdu.getNombreE(), dtoEdu.getDescripcionE());
         Seducacion.save(educacion);
@@ -62,10 +62,9 @@ public class CEducacion {
         if(!Seducacion.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         
-        if(Seducacion.existsByNombreE(dtoEdu.getNombreE()) && Seducacion.getByNombreE(dtoEdu.getNombreE()).get().getId() != id)
-            return new ResponseEntity(new Mensaje("Ese item de educación ya existe"), HttpStatus.BAD_REQUEST);
-        
         if(StringUtils.isBlank(dtoEdu.getNombreE()))
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio!!"), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(dtoEdu.getDescripcionE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio!!"), HttpStatus.BAD_REQUEST);
         
         Educacion educacion = Seducacion.getOne(id).get();

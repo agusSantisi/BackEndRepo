@@ -18,6 +18,7 @@ public class dtoHyS {
         this.porcentaje = porcentaje;
     }
 
+
     public String getNombre() {
         return nombre;
     }

@@ -5,6 +5,7 @@ import com.portfolio.PortfolioBack.Dto.dtoHyS;
 import com.portfolio.PortfolioBack.Entity.HyS;
 import com.portfolio.PortfolioBack.Security.Controller.Mensaje;
 import com.portfolio.PortfolioBack.Service.SHyS;
+import java.util.HashSet;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,13 +71,14 @@ public class CHyS {
             return new ResponseEntity(new Mensaje("Ese item ya existe"), HttpStatus.BAD_REQUEST);
         }
         if(StringUtils.isBlank(dtohys.getNombre())){
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("¡El nombre es obligatorio!"), HttpStatus.BAD_REQUEST);
         }
         
         
         HyS hys = shys.getOne(id).get();
         hys.setNombre(dtohys.getNombre());
         hys.setPorcentaje(dtohys.getPorcentaje());
+        
         shys.save(hys);
         return new ResponseEntity(new Mensaje("El item fue actualizado correctamente"), HttpStatus.OK);
     } 

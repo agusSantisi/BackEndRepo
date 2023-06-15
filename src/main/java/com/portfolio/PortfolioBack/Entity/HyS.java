@@ -15,14 +15,16 @@ public class HyS {
     private String nombre;
     private int porcentaje;
 
+    
+    public HyS() {
+    }
 
     public HyS(String nombre, int porcentaje) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
     }
     
-    public HyS() {
-    }
+    
 
     public int getId() {
         return id;
@@ -47,6 +49,5 @@ public class HyS {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
     
 }

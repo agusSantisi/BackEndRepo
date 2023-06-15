@@ -50,7 +50,7 @@ public class dtoPersona {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
+    } 
 
     public String getImg() {
         return img;

@@ -29,7 +29,7 @@ public class Persona {
     @Size(min = 1, max = 300, message = "La longitud no es la correcta")
     private String descripcion;
     
-    @Size(min = 1, max = 50, message = "La longitud no es la correcta")
+    @Size(min = 1, max = 255, message = "La longitud no es la correcta")
     private String img;
 
     public Persona() {
